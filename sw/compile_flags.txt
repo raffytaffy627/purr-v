@@ -1,0 +1,4 @@
+--target=riscv32-unknown-elf
+-march=rv32im_zicsr
+-ffreestanding
+-Icommon

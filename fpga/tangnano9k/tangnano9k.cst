@@ -1,0 +1,88 @@
+// tangnano9k.cst - pin map for the Tang Nano 9K
+// onboard pins are from Sipeed's docs. header pins are my picks from the
+// 3.3 V banks - double-check against the pinout diagram on YOUR board
+// revision before wiring, and change them here if you want :p
+
+// ---- onboard ----
+IO_LOC "clk_27m" 52;
+IO_PORT "clk_27m" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC "btn_s1_n" 3;
+IO_PORT "btn_s1_n" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+IO_LOC "btn_s2_n" 4;
+IO_PORT "btn_s2_n" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+
+IO_LOC "uart_tx" 17;
+IO_PORT "uart_tx" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC "uart_rx" 18;
+IO_PORT "uart_rx" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+IO_LOC "led_n[0]" 10;
+IO_LOC "led_n[1]" 11;
+IO_LOC "led_n[2]" 13;
+IO_LOC "led_n[3]" 14;
+IO_LOC "led_n[4]" 15;
+IO_LOC "led_n[5]" 16;
+IO_PORT "led_n[0]" IO_TYPE=LVCMOS18 DRIVE=8;
+IO_PORT "led_n[1]" IO_TYPE=LVCMOS18 DRIVE=8;
+IO_PORT "led_n[2]" IO_TYPE=LVCMOS18 DRIVE=8;
+IO_PORT "led_n[3]" IO_TYPE=LVCMOS18 DRIVE=8;
+IO_PORT "led_n[4]" IO_TYPE=LVCMOS18 DRIVE=8;
+IO_PORT "led_n[5]" IO_TYPE=LVCMOS18 DRIVE=8;
+
+// ---- 1602 LCD (4-bit mode, RW tied to GND) ----
+IO_LOC "lcd_rs" 25;
+IO_LOC "lcd_e" 26;
+IO_LOC "lcd_d[0]" 27;
+IO_LOC "lcd_d[1]" 28;
+IO_LOC "lcd_d[2]" 29;
+IO_LOC "lcd_d[3]" 30;
+IO_PORT "lcd_rs" IO_TYPE=LVCMOS33;
+IO_PORT "lcd_e" IO_TYPE=LVCMOS33;
+IO_PORT "lcd_d[0]" IO_TYPE=LVCMOS33;
+IO_PORT "lcd_d[1]" IO_TYPE=LVCMOS33;
+IO_PORT "lcd_d[2]" IO_TYPE=LVCMOS33;
+IO_PORT "lcd_d[3]" IO_TYPE=LVCMOS33;
+
+// ---- HC-SR04 ----
+IO_LOC "sonar_trig" 33;
+IO_PORT "sonar_trig" IO_TYPE=LVCMOS33;
+IO_LOC "sonar_echo" 34;
+IO_PORT "sonar_echo" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+// ---- passive buzzer ----
+IO_LOC "buzz" 35;
+IO_PORT "buzz" IO_TYPE=LVCMOS33;
+
+// ---- extra kit buttons (other leg to GND) ----
+IO_LOC "btn_ext_n[0]" 40;
+IO_LOC "btn_ext_n[1]" 41;
+IO_LOC "btn_ext_n[2]" 42;
+IO_PORT "btn_ext_n[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "btn_ext_n[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "btn_ext_n[2]" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// ---- 4-digit 7-segment (5461AS) ----
+IO_LOC "seg[0]" 48;
+IO_LOC "seg[1]" 49;
+IO_LOC "seg[2]" 53;
+IO_LOC "seg[3]" 54;
+IO_LOC "seg[4]" 55;
+IO_LOC "seg[5]" 56;
+IO_LOC "seg[6]" 57;
+IO_LOC "seg[7]" 68;
+IO_LOC "dig[0]" 69;
+IO_LOC "dig[1]" 70;
+IO_LOC "dig[2]" 71;
+IO_LOC "dig[3]" 72;
+IO_PORT "seg[0]" IO_TYPE=LVCMOS33;
+IO_PORT "seg[1]" IO_TYPE=LVCMOS33;
+IO_PORT "seg[2]" IO_TYPE=LVCMOS33;
+IO_PORT "seg[3]" IO_TYPE=LVCMOS33;
+IO_PORT "seg[4]" IO_TYPE=LVCMOS33;
+IO_PORT "seg[5]" IO_TYPE=LVCMOS33;
+IO_PORT "seg[6]" IO_TYPE=LVCMOS33;
+IO_PORT "seg[7]" IO_TYPE=LVCMOS33;
+IO_PORT "dig[0]" IO_TYPE=LVCMOS33;
+IO_PORT "dig[1]" IO_TYPE=LVCMOS33;
+IO_PORT "dig[2]" IO_TYPE=LVCMOS33;
+IO_PORT "dig[3]" IO_TYPE=LVCMOS33;

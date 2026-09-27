@@ -1,0 +1,31 @@
+The Rafin Hasan License (v1.0)
+
+Copyright (c) 2026 Rafin Hasan (github.com/raffytaffy627)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this work, including its software, hardware designs (HDL), documentation,
+and any other files in this repository (the "Work"), to use, copy, modify,
+merge, publish, distribute, sublicense, and/or sell copies of the Work, and
+to build and sell hardware from it, subject to the following conditions:
+
+1. Keep the credit. The above copyright notice and this license must be
+   included in all copies or substantial portions of the Work.
+
+2. Say where it came from. If you use the Work, or a modified version of it,
+   in anything public (a project, product, video, paper, or website), give
+   visible credit in its documentation or description, for example:
+   "Based on work by Rafin Hasan (github.com/raffytaffy627)".
+
+3. Mark your changes. Modified versions must be clearly marked as modified
+   and must not be presented as the original Work.
+
+4. No endorsement. You may not use the author's name to endorse or promote
+   anything derived from the Work without written permission.
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING DAMAGE
+TO HARDWARE OR OTHER PROPERTY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE WORK OR THE USE OR
+OTHER DEALINGS IN THE WORK.
