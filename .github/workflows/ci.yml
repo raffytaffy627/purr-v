@@ -1,0 +1,54 @@
+name: purr-V CI
+
+on:
+  push:
+  pull_request:
+
+env:
+  XPACK: xpack-riscv-none-elf-gcc-15.2.0-1
+
+jobs:
+  sim:
+    name: simulate + fuzz
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: install Icarus Verilog + RISC-V GCC
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y iverilog
+          curl -sL https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases/download/v15.2.0-1/$XPACK-linux-x64.tar.gz | tar xz
+          echo "$PWD/$XPACK/bin" >> $GITHUB_PATH
+
+      - name: run the whole test suite
+        run: python tools/run_tests.py --fuzz 50
+
+  fpga:
+    name: synth + place & route (Tang Nano 9K)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: install toolchains
+        run: |
+          curl -sL https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases/download/v15.2.0-1/$XPACK-linux-x64.tar.gz | tar xz
+          echo "$PWD/$XPACK/bin" >> $GITHUB_PATH
+          pip install yowasp-yosys yowasp-nextpnr-himbaechel-gowin apycula
+
+      - name: build bitstream
+        run: python tools/build_fpga.py
+
+      - name: utilization + timing
+        run: grep -E "LUT4:|DFF:|BSRAM:|Max frequency" build/nextpnr.log | tail -5
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: purrv-tangnano9k-bitstream
+          path: build/purrv_tangnano9k.fs
